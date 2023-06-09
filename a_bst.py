@@ -56,46 +56,48 @@ def preorder_traversal(tree: Node, level:int=0):
 def inorder_traversal(tree: Node, level:int=0):
     if level == 0:
         print('in order traversal')
-    if False: # TODO
-        # TODO
-        return
+    if tree != None: 
+        inorder_traversal(tree.left, level+1)
+        print(f'level = {level:^3d} : value = {tree.value}')
+        inorder_traversal(tree.right, level+1)
 
 
 # NOT given to the students
 def postorder_traversal(tree: Node, level:int=0):
     if level == 0:
         print('post order traversal')
-    if False: # TODO
-        # TODO
-        return
+    if tree != None : 
+        inorder_traversal(tree.left, level+1)
+        inorder_traversal(tree.right, level+1)
+        print(f'level = {level:^3d} : value = {tree.value}')
 
 
 # NOT given to the students
 def search(root: Node, value: int) -> Node:
     # base cases
-    if False: # TODO
-        return None # TODO
-    elif False: # TODO
-        return None # TODO
+    if root is None: 
+        return root
+    elif root.value == value: # TODO
+        return root
     # recursive step
     else:
-        if False: # TODO
-            return None # TODO
+        if root.value > value: # TODO
+            return search(root.left, value)
         else:
-            return None # TODO
+            return search(root.right, value)
 
 
 # NOT given to students
 def insert(root: Node, value: int) -> Node:
-    if False: # TODO
-        return None # TODO
+    if root is None: 
+        return Node(value, None, None)
     else:
-        if False: # TODO
-            return None # TODO
-        elif False: # TODO
-            root.right = None # TODO
+        if root.value == value: 
+            return root 
+        elif value > root.value: 
+            root.right = insert(root.right, value)
         else:
-            root.left = None # TODO
+            root.left = insert(root.left, value)
     return root
 
 
