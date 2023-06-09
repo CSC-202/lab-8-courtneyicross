@@ -18,7 +18,7 @@ class Node:
 # given to students
 class Tree:
     root: Node
-    def __init__(self, root=None):
+    def __init__(self, root= None):
         self.root = root
 
 
